@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>口罩下的两年 - 都市治愈小说</title>
+    <meta name="description" content="一部关于面子与生存、中年困境、自我接纳的都市现实主义小说">
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#/" class="nav-logo">
+                <span class="logo-icon">📖</span>
+                <span class="logo-text">口罩下的两年</span>
+            </a>
+            <div class="nav-links">
+                <a href="#/" class="nav-link" data-page="home">首页</a>
+                <a href="#/chapters" class="nav-link" data-page="chapters">目录</a>
+                <a href="#/about" class="nav-link" data-page="about">关于</a>
+            </div>
+            <div class="nav-actions">
+                <button id="themeToggle" class="icon-btn" title="切换主题">🌙</button>
+                <button id="editModeBtn" class="icon-btn hidden" title="编辑模式">✏️</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 主内容区 -->
+    <main id="app" class="main-content">
+        <!-- 动态内容将在这里渲染 -->
+    </main>
+
+    <!-- 密码弹窗 -->
+    <div id="passwordModal" class="modal hidden">
+        <div class="modal-backdrop"></div>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="modalTitle">🔒 需要密码</h3>
+                <button class="modal-close">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p id="modalDesc">请输入密码以继续阅读</p>
+                <input type="password" id="passwordInput" class="input-field" placeholder="输入密码...">
+                <p id="passwordError" class="error-text hidden">密码错误，请重试</p>
+            </div>
+            <div class="modal-footer">
+                <button id="passwordSubmit" class="btn btn-primary">确认</button>
+                <button class="btn btn-secondary modal-close">取消</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 编辑器弹窗 -->
+    <div id="editorModal" class="modal hidden">
+        <div class="modal-backdrop"></div>
+        <div class="modal-content modal-large">
+            <div class="modal-header">
+                <h3>✏️ 编辑章节</h3>
+                <button class="modal-close">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="editor-container">
+                    <textarea id="editorTextarea" class="editor-textarea"></textarea>
+                    <div id="editorPreview" class="editor-preview"></div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <span id="editorStatus" class="status-text"></span>
+                <button id="editorSave" class="btn btn-primary">💾 保存到 GitHub</button>
+                <button class="btn btn-secondary modal-close">取消</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- GitHub Token 设置弹窗 -->
+    <div id="tokenModal" class="modal hidden">
+        <div class="modal-backdrop"></div>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>🔑 设置 GitHub Token</h3>
+                <button class="modal-close">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p>首次使用编辑功能需要设置 GitHub Personal Access Token</p>
+                <a href="https://github.com/settings/tokens?type=beta" target="_blank" class="link">→ 点击这里创建 Token</a>
+                <input type="password" id="tokenInput" class="input-field" placeholder="粘贴你的 Token...">
+            </div>
+            <div class="modal-footer">
+                <button id="tokenSave" class="btn btn-primary">保存</button>
+                <button class="btn btn-secondary modal-close">取消</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p>© 2024 《口罩下的两年》 All Rights Reserved</p>
+            <p class="footer-subtitle">都市现实 · 治愈向 · 轻喜剧</p>
+        </div>
+    </footer>
+
+    <!-- 返回顶部 -->
+    <button id="backToTop" class="back-to-top hidden">↑</button>
+
+    <!-- 加载脚本 -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="js/config.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/markdown.js"></script>
+    <script src="js/github.js"></script>
+    <script src="js/editor.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
