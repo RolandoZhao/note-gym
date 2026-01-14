@@ -1,0 +1,18 @@
+# Windows specific
+Thumbs.db
+Desktop.ini
+
+# macOS
+.DS_Store
+
+# Editor files
+*.swp
+*.swo
+*~
+.vscode/
+.idea/
+
+# Temporary files
+*.tmp
+*.temp
+*.bak
